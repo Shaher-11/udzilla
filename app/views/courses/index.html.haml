@@ -1,11 +1,13 @@
-%h1 Listing courses
+%h1
+  Courses:
+  = @courses.count
 
 %table.table
   %thead
     %tr
       %th Title
       %th Description
-      %th
+      %th User
       %th
       %th
 
@@ -14,6 +16,7 @@
       %tr
         %td= course.title
         %td= course.description
+        %td= course.user
         %td= link_to 'Show', course
         %td= link_to 'Edit', edit_course_path(course)
         %td= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }
