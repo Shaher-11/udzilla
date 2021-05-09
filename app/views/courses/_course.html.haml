@@ -1,16 +1,16 @@
 .card
-  .card-header
+  .card-header.headery
     .fas.fa-book
-    = link_to course.title, course_path(course)
-  .card-body
+    = link_to course.title, course_path(course), class: "titly"
+  .card-body.desy
     = course.description
-  .card-footer
+  .card-footer.footy
     .far.fa-clock
     = course.created_at.strftime('%d-%b-%Y')
     .row
     .fa.fa-chalkboard-teacher
     = course.user
-  .card-footer
+  .card-footer.footery
     =link_to 'Show', course, class: "btn btn-sm btn-primary"
     = link_to 'Edit', edit_course_path(course), class: "btn btn-sm btn-warning"
     = link_to 'Delete', course,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger"
