@@ -1,0 +1,64 @@
+.jumbotron
+  .display-4
+    Ready For The learning!
+
+    .p-4
+  %form.form-inline.my-2.my-lg-0
+    = form_tag(courses_path, method: :get) do
+      .input-group
+        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search Courses", class: 'form-control'
+        %span.input-group-append
+          %button.btn.btn-primary.btn-sm{:type => "submit"}
+            %span.fas.fa-search{"aria-hidden" => "true"}
+
+.card-group
+  .card
+    .card
+      %h1
+        .fas.fa-graduation-cap
+      = Course.count
+      Online Courses
+      .row
+      Explore Variety Of Topics
+  .card
+    %h1
+      .fa.fa-chalkboard-teacher
+    = Course.distinct.count(:user_id)
+    Top Instructors
+    .row
+    Find Top Rated Instrutors
+  .card
+    %h1
+      .fa.fa-user-graduate
+    = User.count
+    Active Learners
+    .row
+    Join The Knowledge Sharing Community
+  .card
+    %h1
+      .fa.fa-infinity
+    Lifetime Access
+    .row
+    Learn On Your Own Schadule
+
+
+%hr
+%h2
+  Popular Courses
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+
+%hr
+%h2
+  Top Courses
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+
+%hr
+%h2
+  Latest Courses
+.card-columns
+  - @latest_courses.each do |course|
+    = render 'courses/course', course: course
