@@ -1,0 +1,23 @@
+.card
+  .card-header.headery
+    .fas.fa-user
+    = user.email
+  .card-footer.footy
+    .far.fa-clock
+    Joined
+    = time_ago_in_words(user.created_at)
+  .card-footer.footy
+    = 'sign_in_count'.humanize
+    = user.sign_in_count
+    .row.p-2
+    = 'current_sign_in_at'.humanize
+    = user.current_sign_in_at
+    .row.p-2
+    = 'last_sign_in_at'.humanize
+    = user.last_sign_in_at
+    .row.p-2
+    = 'current_sign_in_ip'.humanize
+    = user.current_sign_in_ip
+    .row.p-2 
+    = 'last_sign_in_ip'.humanize
+    = user.last_sign_in_ip

@@ -17,6 +17,10 @@
           = link_to new_course_path, class: 'nav-link' do
             %i.fas.fa-plus
             New Course
+        %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
+          = link_to users_path, class: 'nav-link' do
+            %i.fas.fa-user
+            Users
       %form.form-inline.my-2.my-lg-0
       = form_tag(courses_path, method: :get) do
         .input-group
