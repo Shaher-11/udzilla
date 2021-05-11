@@ -1,7 +1,7 @@
 .card
-  .card-header
-    %h1 New course
-  .card-body
+  .card-header.text-center.new-cors
+    %h1 Create New course
+  .card-body.h6
     = render 'form'
 
-= link_to 'Back', courses_path
+= link_to 'Back', courses_path, class: "btn btn-dark"

@@ -33,7 +33,7 @@
 
 .headery,
 .titly  {
-  background-color: black;
+  background-color: rgb(33, 34, 34);
   color: rgb(46, 158, 223) !important;
   text-align: center !important;
   font-size: 1.5rem;
@@ -56,10 +56,14 @@
   text-decoration: underline 3px solid rgb(46, 158, 223);
 }
 
+.new-cors {
+  background-color: rgb(33, 34, 34);
+  color: rgb(46, 158, 223);
+}
 
-
-
-
+.mybtn {
+  width: 100%;
+}
 
 
 
