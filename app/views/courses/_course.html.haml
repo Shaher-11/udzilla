@@ -1,15 +1,27 @@
 .card
   .card-header.headery
-    .fas.fa-book
+    .fas.fa-graduation-cap
     = link_to course.title, course_path(course), class: "titly"
   .card-body.desy
-    = course.description
+    %small= simple_format(course.short_description)
   .card-footer.footy
-    .far.fa-clock
-    = course.created_at.strftime('%d-%b-%Y')
+  .row.text-center.h5
+    .col-6
+      .fas.fa-globe-africa
+      = course.language
+    .col-6
+      .fas.fa-signal
+      = course.level
+  .card-footer.footy
+    = number_to_currency(course.price)
+  .card-footer.footy
     .row
-    .fa.fa-chalkboard-teacher
-    = course.user
+      .col-6
+        .far.fa-clock
+        = course.created_at.strftime('%d-%b-%Y')
+      .col-6
+        .fa.fa-chalkboard-teacher
+        = course.user
   .card-footer.footery
     =link_to 'Show', course, class: "btn btn-sm btn-primary"
     = link_to 'Edit', edit_course_path(course), class: "btn btn-sm btn-warning"

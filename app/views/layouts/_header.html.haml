@@ -11,7 +11,7 @@
             Home
         %li{:class => "#{'active font-weight-bold' if current_page?(courses_path)} nav-item"}
           = link_to courses_path, class: 'nav-link' do
-            %i.fas.fa-book
+            %i.fas.fa-graduation-cap
             Courses
         %li{:class => "#{'active font-weight-bold' if current_page?(new_course_path)} nav-item"}
           = link_to new_course_path, class: 'nav-link' do
