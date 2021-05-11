@@ -1,15 +1,5 @@
 .jumbotron
   .display-4.text-center
-    Ready For The learning!
-
-    .p-4
-  %form.form-inline.my-2.my-lg-0.text-cen
-    = form_tag(courses_path, method: :get) do
-      .input-group
-        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search Courses", class: 'form-control'
-        %span.input-group-append
-          %button.btn.btn-cust.btn-sm{:type => "submit"}
-            %span.fas.fa-search{"aria-hidden" => "true"}
 
 .card-group
   .card.cardo

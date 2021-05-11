@@ -12,9 +12,11 @@
 }
 
 .jumbotron {
-  background-color: rgb(52, 52, 73) !important;
-  color: white !important;
+  background-image: asset-url('land.jpg');
+  background-size: cover;
+  height: 51rem;
 }
+
 
 .text-cen {
   justify-content: center;
