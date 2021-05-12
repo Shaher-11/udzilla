@@ -1,7 +1,22 @@
 %h1
-  Courses:
-  = @courses.count
+  .text-dark.text-center
+    Our Courses:
+    = @courses.count
 
-.card-columns
-  - @courses.each do |course|
-    = render 'courses/course', course: course
+.row 
+  .col-2 
+    = search_form_for @q do |f|
+      = f.label :title
+      = f.search_field :title_cont, placeholder: 'title'
+      = f.search_field :short_description_cont, placeholder: 'short description'
+      = f.search_field :level_cont, placeholder: 'level'
+      = f.search_field :price_eq, placeholder: 'price'
+      = f.search_field :user_email_cont, placeholder: 'USER MAIL'
+      = f.submit "search"
+    = link_to courses_path, class: "btn btn-sm btn-secondary" do
+      Refresh
+      .fas.fa-sync
+  .col-10
+    .card-columns
+      - @courses.each do |course|
+        = render 'courses/course', course: course

@@ -8,5 +8,9 @@ class User < ApplicationRecord
     email
   end
 
+  def username
+    self.email.split(/@/).first
+  end
+  
   has_many :courses
 end
