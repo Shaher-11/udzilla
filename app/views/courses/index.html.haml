@@ -7,15 +7,15 @@
   .col-12 
     = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
       
-      = f.search_field :title_cont, placeholder: 'title', class: 'filedy'
+      = f.search_field :title_cont, placeholder: 'Title', class: 'filedy'
       
-      = f.search_field :short_description_cont, placeholder: 'short description', class: 'filedy'
+      = f.search_field :short_description_cont, placeholder: 'Description', class: 'filedy'
       
-      = f.search_field :level_cont, placeholder: 'level', class: 'filedy'
+      = f.search_field :level_cont, placeholder: 'Level', class: 'filedy'
       
-      = f.search_field :price_eq, placeholder: 'price', class: 'filedy'
+      = f.search_field :price_eq, placeholder: 'Price', class: 'filedy'
     
-      = f.search_field :user_email_cont, placeholder: 'Email', class: 'filedy'
+      = f.search_field :user_email_cont, placeholder: 'Instructor', class: 'filedy'
       = f.submit "search", class: 'btn ml-4 mb-1 btn-success'
     = link_to courses_path, class: "btn btn-sm btn-primary refrsh" do
       Refresh
