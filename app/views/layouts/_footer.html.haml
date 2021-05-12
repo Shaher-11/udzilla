@@ -1,0 +1,20 @@
+%footer
+  .container
+    .row 
+      .col
+        Copyright
+        @
+        = Time.now.year
+        ELearning S.S
+        .row
+        .fas.fa-envelope
+        = mail_to 'shahershamroukh@gmail.com'
+        .row
+      .col
+        = link_to 'Privacy and policy', privacy_policy_path
+        .row
+        Terms and Conditions
+      .col
+        About Us
+        .row 
+        = link_to 'Teach On Udzilla', new_course_path

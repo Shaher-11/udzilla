@@ -1,9 +1,10 @@
 %h1
   .text-center.coursy
-    Search Courses
-    .fas.fa-search
-
-.row.mt-5
+    Search 
+    .badge.badge-info
+      = @courses.count
+    Courses
+.row.my-3
   .col-12 
     = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
       

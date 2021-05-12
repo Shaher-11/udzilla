@@ -1,3 +1,8 @@
+.text-center.coursy.h1.mb-3
+  %i.fas.fa-user
+  Users
+  .badge.badge-info
+    = @users.count
 .card-columns
   - @users.each do |user|
     = render 'users/user', user: user

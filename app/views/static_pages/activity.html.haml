@@ -1,20 +1,23 @@
 .text-center.coursy.h1
   %i.fas.fa-bell
   Activities
+  .badge.badge-info
+    = @activities.count
 
-- @activities.each do |activity|
-  .row
-    .user-act
-      = activity.id
-    .user-act
-      = activity.trackable_type
-    .user-act
-      = activity.trackable_id
-    .user-act
-      = link_to activity.trackable, activity.trackable
-    .user-act
-      = activity.key
-    .user-act
-      = activity.parameters
-    .user-act
-      = activity.owner
+%ul.list-group
+  - @activities.each do |activity|
+    %li.list-group-item
+      .user-act
+        = activity.id
+      .user-act
+        = activity.trackable_type
+      .user-act
+        = activity.trackable_id
+      .user-act
+        = link_to activity.trackable, activity.trackable
+      .user-act
+        = activity.key
+      .user-act
+        = activity.parameters
+      .user-act
+        = activity.owner
