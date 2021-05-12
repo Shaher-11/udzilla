@@ -1,10 +1,11 @@
 %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-  = link_to 'Udzilla', root_path, class: 'navbar-brand'
+  .logo
+    = link_to  image_tag("udzilla.png"), root_path, class: 'navbar-brand bckgrd'
   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     - if current_user
-      %ul.navbar-nav.mr-auto
+      %ul.navbar-nav.mr-auto.links
         %li{:class => "#{'active font-weight-bold' if current_page?(root_path)} nav-item"}
           = link_to root_path, class: 'nav-link' do
             %i.fas.fa-home

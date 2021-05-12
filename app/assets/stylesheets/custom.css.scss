@@ -3,6 +3,20 @@
   background-color: #20115b !important;
 }
 
+.bckgrd:hover {
+  background-color: #20115b !important;
+}
+.bckgrd {
+  background-position: center;
+  background-size: cover;
+  max-width: 100%;
+  height: auto;
+  
+}
+
+.links {
+  font-size: 1.5rem !important;
+}
 .btn-cust {
   background-color: white !important;
 }
@@ -15,7 +29,7 @@
   background-image: asset-url('home3.jpg');
   background-position: center;
   background-size: cover;
-  height: 51rem;
+  height: 41rem;
   background-color: #010108;
 }
 
