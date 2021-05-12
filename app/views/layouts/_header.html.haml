@@ -21,15 +21,15 @@
           = link_to users_path, class: 'nav-link' do
             %i.fas.fa-user
             Users
-
+      %ul.navbar-nav.mr-righ
         = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
           .input-group 
             = f.search_field :title_or_short_description_cont, class: 'form-control', placeholder: "Search"
             %span.input-group-append
-              %button.btn.btn-cust.btn-sm{:type => "submit"}
+              %button.btn.btn-cust.btn{:type => "submit"}
                 %span.fas.fa-search{"aria-hidden" => "true"}
 
-      %ul.navbar-nav.mr-right
+      .mr-right
         %li{:class => "#{'active font-weight-bold' if current_page?(root_path)} nav-item"}
           = link_to edit_user_registration_path, class: "dropdown-item upy" do
             .fas.fa-cog.btn-c

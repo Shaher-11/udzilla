@@ -1,14 +1,14 @@
 @import 'bootstrap/dist/css/bootstrap';
 .navbar {
-  background-color: rgb(52, 52, 73) !important;
+  background-color: #20115b !important;
 }
 
 .btn-cust {
-  background-color: rgb(66, 147, 194) !important;
+  background-color: white !important;
 }
 
 .btn-c {
-  color: rgb(66, 147, 194) !important;;
+  color: white !important;;
 }
 
 .jumbotron {
@@ -23,20 +23,20 @@
 }
 
 .cardo {
-  background-color: rgb(52, 52, 73) !important;
+  background-color: #20115b !important;
 }
 .cardy {
   margin: 0 auto;
   color: white;
-  background-color: rgb(52, 52, 73) !important;
+  background-color: #20115b !important;
   padding: 1rem;
   font-size: 1.5rem;
 }
 
 .headery,
 .titly  {
-  background-color: rgb(33, 34, 34);
-  color: rgb(46, 158, 223) !important;
+  background-color: #010108;
+  color: white !important;
   text-align: center !important;
   font-size: 1.5rem;
 }
@@ -55,24 +55,39 @@
 .parts {
   text-align: center;
   margin-bottom: 2rem !important;
-  text-decoration: underline 3px solid rgb(46, 158, 223);
+  text-decoration: underline 3px solid #7232f2;
 }
 
 .new-cors {
   background-color: rgb(33, 34, 34);
-  color: rgb(46, 158, 223);
+  color: white;
 }
 
 .mybtn {
   width: 100%;
 }
 
+.filedy {
+  height: 2.5rem;
+  width: 19rem;
+  text-align: center;
+  font-size: large;
+}
 
+.refrsh {
+  position: absolute;
+  top: 0.1rem;
+  right: 2rem;
+  height: 2.4rem;
+  color: white !important;
+}
 
-
-
-
-
+.coursy {
+  background-color: #7232f2;
+  height: 8rem;
+  color: white;
+  padding-top: 2rem;
+}
 
 
 
