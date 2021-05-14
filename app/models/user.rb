@@ -39,5 +39,8 @@ class User < ApplicationRecord
     end
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a025a634e58cd416ea4f6fa79f9bff85dd88d591
 end
