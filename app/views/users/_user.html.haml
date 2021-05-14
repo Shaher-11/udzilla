@@ -25,3 +25,4 @@
     - user.roles.each do |role|
       .badge.badge-info
         = role.name
+    = link_to 'Edit Roles', edit_user_path(user), class: 'btn btn-warning'
