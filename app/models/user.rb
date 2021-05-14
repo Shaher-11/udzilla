@@ -16,6 +16,9 @@ class User < ApplicationRecord
   
   has_many :courses
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   after_create :assign_default_role
 
   def assign_default_role
@@ -27,7 +30,7 @@ class User < ApplicationRecord
       self.add_role(:student) if self.roles.blank?
       self.add_role(:teacher)
     end
-  end
+  end  
 
   validate :must_have_a_role, on: :update
 
@@ -39,8 +42,4 @@ class User < ApplicationRecord
     end
   end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a025a634e58cd416ea4f6fa79f9bff85dd88d591
 end

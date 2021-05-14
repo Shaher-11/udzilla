@@ -1,4 +1,4 @@
-%footer.text-secondary
+%footer.text-secondary.mt-4
   .container
     .row 
       .col
@@ -10,13 +10,19 @@
         .fas.fa-envelope
         = mail_to 'shahershamroukh@gmail.com'
         .row
-        .fab.fa-github
-        = link_to 'github', "https://github.com/Shaher-11/", target: "_blank"
+        .fab.fa-github.text-dark
+        = link_to 'Github', "https://github.com/Shaher-11/", target: "_blank", class: "text-dark"
       .col
         = link_to 'Privacy and policy', privacy_policy_path
         .row
         Terms and Conditions
+        .row
+        .fab.fa-linkedin.text-primary
+        = link_to 'Linkedin', "https://www.linkedin.com/in/shaher-shamroukh/", target: "_blank", class: "text-primary"
       .col
         About Us
         .row 
         = link_to 'Teach On Udzilla', new_course_path
+        .row
+        .fab.fa-dev.text-dark
+        = link_to 'Dev', "https://dev.to/shahershamroukh/", target: "_blank", class: "text-dark"

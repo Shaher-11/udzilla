@@ -1,7 +1,10 @@
 .card
   .card-header.headery
     .fas.fa-user
-    = user.email
+    = link_to user.email, user_path(user), class: "text-light"
+  .card-footer.footy
+    .far.fa-user
+    = user.username
   .card-footer.footy
     .far.fa-clock
     Joined
@@ -20,8 +23,4 @@
       .badge.badge-info
         = role.name
     - if policy(user).edit?
-<<<<<<< HEAD
       = link_to 'Edit Roles', edit_user_path(user), class: 'btn btn-warning' 
-=======
-      = link_to 'Edit Roles', edit_user_path(user), class: 'btn btn-warning'
->>>>>>> a025a634e58cd416ea4f6fa79f9bff85dd88d591

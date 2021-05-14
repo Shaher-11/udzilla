@@ -5,10 +5,6 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a025a634e58cd416ea4f6fa79f9bff85dd88d591
   def edit?
     @user.has_role?:admin 
   end
@@ -17,8 +13,4 @@ class UserPolicy < ApplicationPolicy
     @user.has_role?:admin 
   end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a025a634e58cd416ea4f6fa79f9bff85dd88d591
 end
