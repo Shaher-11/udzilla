@@ -42,7 +42,8 @@
               .fas.fa-sign-out-alt.btn-c
     - else
       %ul.navbar-nav
-        %li.nav-item
-          = link_to 'Sign Up', new_user_registration_path, class: "nav-link"
-        %li.nav-item
-          = link_to 'Sign In', new_user_session_path, class: "nav-link"
+        .outer-link
+          %li.nav-item
+            = link_to 'Sign Up', new_user_registration_path, class: "nav-link pb-3"
+          %li.nav-item
+            = link_to 'Sign In', new_user_session_path, class: "nav-link pt-3"
