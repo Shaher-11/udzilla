@@ -1,6 +1,10 @@
 .card
   .card-header.headery
     .fas.fa-user
+    - if user.online?
+      .text-success.fas.fa-circle
+    - else
+      .text-danger.fas.fa-circle
     = link_to user.email, user_path(user), class: "text-light"
   .card-footer.footy
     .far.fa-user
