@@ -1,7 +1,9 @@
-%h1 Editing lesson
-
-= render 'form'
-
-= link_to 'Show Lesson', course_lesson_path(@course, @lesson)
-\|
-= link_to 'Back To Courses', course_path(@lesson.course)
+.card
+  .card-header.coursy.text-center
+    %h1 Editing Lesson
+  .card-body 
+    = render 'form'
+  .card-footer.text-center.text-white
+    = link_to 'Show Lesson', course_lesson_path(@course, @lesson), class: 'btn btn-primary text-white'
+    \|
+    = link_to 'Back To Courses', course_path(@lesson.course), class: 'btn btn-secondary text-white'

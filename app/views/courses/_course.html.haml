@@ -27,5 +27,5 @@
         = link_to course.user.username, user_path(course.user)
   -if current_user
     .card-footer.text-center.h5
-      = link_to 'Edit', edit_course_path(course), class: "btn btn-sm btn-warning" if policy(course).edit?
-      = link_to 'Delete', course,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" if policy(course).destroy?
+      = link_to 'Edit', edit_course_path(course), class: "btn btn btn-warning text-white" if policy(course).edit?
+      = link_to 'Delete', course,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn btn-danger text-white" if policy(course).destroy?
