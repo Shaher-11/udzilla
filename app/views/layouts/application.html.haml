@@ -4,7 +4,8 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Udzilla
+    %title
+      = content_for?(:title) ? yield(:title) : "Udzilla"
     = favicon_link_tag
     = csrf_meta_tags
     = csp_meta_tag

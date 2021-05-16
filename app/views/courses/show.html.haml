@@ -1,3 +1,8 @@
+- content_for :title do
+  Udzilla
+  \|
+  = @course.title
+
 = link_to 'Courses', courses_path
 \|
 = link_to @course.title, courses_path(@course)

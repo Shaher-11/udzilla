@@ -1,3 +1,8 @@
+- content_for :title do
+  Udzilla
+  \|
+  All Users
+
 .text-center.coursy.h1.mb-3
   %i.far.fa-user
   Users
@@ -30,7 +35,12 @@
     - @users.each do |user|
       %tr
         %td= user.id
-        %td= user.email
+        %td
+          - if user.online?
+            .text-success.fas.fa-circle
+          - else
+            .text-danger.far.fa-circle
+          = link_to user.email, user_path(user)
         %td= user.created_at
         %td= user.sign_in_count
         %td= user.current_sign_in_at
