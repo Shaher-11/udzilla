@@ -9,7 +9,7 @@
     = f.rich_text_area :content
     %small= f.error :content, class: 'text-danger'
     = f.input :course_id, input_html: {value: @lesson.course_id || params[:course_id]}, as: :hidden
-
+    %p
   .form-actions
     .btn.btn-success.mybtn
       = f.button :submit, class: 'text-white'

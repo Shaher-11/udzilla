@@ -1,5 +1,5 @@
 .text-center.coursy.h1.mb-3
-  %i.fas.fa-user
+  %i.far.fa-user
   Users
   .badge.badge-info
     = @users.count
@@ -8,9 +8,11 @@
     = render 'users/user', user: user
 
 = search_form_for @q do |f|
-  = f.search_field :email_or_sign_in_count_eq, placeholder: 'search by email or sign in count'
-  = f.submit "search"
-= link_to users_path, class: "btn btn-sm btn-secondary" do
+  .row
+    = f.search_field :email_or_sign_in_count_eq, placeholder: 'Search Users', class: 'searchy text-center mt-5'
+  .row
+    = f.submit "search", class: 'btn btn-success ml-3 mb-3 btn-block'
+= link_to users_path, class: "btn btn-sm btn-primary text-white btn-block mb-5" do
   .fas.fa-sync 
 
 %table.table.table-bordered

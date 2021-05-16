@@ -20,11 +20,11 @@
             New Course
         %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
           = link_to users_path, class: 'nav-link' do
-            %i.fas.fa-user
+            %i.far.fa-user
             Users
         %li{:class => "#{'active font-weight-bold' if current_page?(activity_path)} nav-item"}
           = link_to activity_path, class: 'nav-link' do
-            %i.fas.fa-bell
+            %i.far.fa-bell
             Activity
       %ul.navbar-nav.mr-righ
         = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
