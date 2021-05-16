@@ -1,12 +1,11 @@
 .card 
   .card-header.headery
-    = link_to lesson.title, lesson
+    = link_to lesson.title, course_lesson_path(@course, lesson)
   - if policy(lesson).show?
     .card-body.desy
       = lesson.content
       = lesson.course
-  - if policy(lesson).edit?
     .card-footer.footy
-      = link_to 'Edit', edit_lesson_path(lesson), class: 'btn btn-warning'
-      = link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+      = link_to 'Edit', edit_course_lesson_path(@course, lesson), class: 'btn btn-warning' if policy(lesson).edit?
+      = link_to 'Destroy', [@course, lesson], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' if policy(lesson).edit?
 %p

@@ -1,8 +1,8 @@
 .card
   .card-header.text-center.new-cors.coursy
     %h1
-      Create New course
+      Create New Lesson
   .card-body.h6
     = render 'form'
 
-= link_to 'Back', lessons_path, class: "btn btn-dark"
+= link_to 'Back', course_path(@course), class: "btn btn-dark"
