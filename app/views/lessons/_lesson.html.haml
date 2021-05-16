@@ -1,0 +1,9 @@
+.card 
+  .card-header.headery
+    = link_to lesson.title, lesson
+  .card-body.desy
+    = lesson.content
+    = lesson.course
+  .card-footer.footy
+    = link_to 'Edit', edit_lesson_path(lesson), class: 'btn btn-warning'
+    = link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'

@@ -15,6 +15,9 @@
   .card-footer.footy
     = number_to_currency(course.price)
   .card-footer.footy
+    .fas.fa-book
+    = course.lessons.count
+  .card-footer.footy
     .row
       .col-6
         .far.fa-clock
