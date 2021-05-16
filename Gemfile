@@ -26,6 +26,7 @@ gem 'ransack', '~> 2.4', '>= 2.4.2'
 gem 'public_activity', '~> 1.6', '>= 1.6.4'
 gem 'rolify', '~> 6.0'
 gem 'pundit', '~> 2.1'
+gem 'exception_notification', '~> 4.4', '>= 4.4.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
