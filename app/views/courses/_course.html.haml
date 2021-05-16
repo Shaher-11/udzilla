@@ -24,7 +24,7 @@
         = course.created_at.strftime('%d-%b-%Y')
       .col-6
         .fa.fa-chalkboard-teacher
-        = course.user.username
+        = link_to course.user.username, user_path(course.user)
   -if current_user
     .card-footer.text-center.h5
       = link_to 'Edit', edit_course_path(course), class: "btn btn-sm btn-warning" if policy(course).edit?
