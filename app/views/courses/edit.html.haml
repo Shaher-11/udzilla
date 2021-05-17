@@ -10,8 +10,8 @@
       Edit Course
   .card-body 
     = render 'form'
-
-.text-center
-  = link_to 'Show', @course, class: 'btn btn-primary text-white mr-5'
-  \
-  = link_to 'Back', courses_path, class: 'btn btn-secondary text-white ml-5'
+  .card-footer
+    .text-center
+      = link_to 'Show', @course, class: 'btn btn-primary text-white mr-5'
+      \
+      = link_to 'Back', courses_path, class: 'btn btn-secondary text-white ml-5'

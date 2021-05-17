@@ -1,29 +1,37 @@
-%h1 Listing enrollments
-
-%table
-  %thead
-    %tr
-      %th Course
-      %th User
-      %th Rating
-      %th Review
-      %th Price
-      %th
-      %th
-      %th
-
-  %tbody
-    - @enrollments.each do |enrollment|
+- content_for :title do
+  Udzilla
+  \|
+  Enrollments
+%h1
+  .text-center.coursy
+    .badge.badge-info
+      = @enrollments.count
+    Enrollments
+.w-100.container.table-responsive
+  %table.table-bordered.table-striped.text-center
+    %thead
       %tr
-        %td= enrollment.course
-        %td= enrollment.user
-        %td= enrollment.rating
-        %td= enrollment.review
-        %td= enrollment.price
-        %td= link_to 'Show', enrollment
-        %td= link_to 'Edit', edit_enrollment_path(enrollment)
-        %td= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Course
+        %th User
+        %th Rating
+        %th Review
+        %th Price
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @enrollments.each do |enrollment|
+        %tr
+          %td= enrollment.course
+          %td= enrollment.user
+          %td= enrollment.rating
+          %td= enrollment.review
+          %td= number_to_currency(enrollment.price)
+          %td= link_to 'Show', enrollment, class: 'btn btn-success text-white'
+          %td= link_to 'Edit', edit_enrollment_path(enrollment), class: 'btn btn-warning text-white'
+          %td= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white'
 
-= link_to 'New Enrollment', new_enrollment_path
+  %br
+
+  = link_to 'New Enrollment', new_enrollment_path, class: 'btn btn-primary text-white'

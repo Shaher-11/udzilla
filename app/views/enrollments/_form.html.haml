@@ -8,7 +8,7 @@
     = f.association :user
     = f.input :rating
     = f.input :review
-    = f.input :price
 
   .form-actions
-    = f.button :submit
+    .btn.btn-success.mybtn
+      = f.button :submit, class: 'text-white'

@@ -1,7 +1,18 @@
-%h1 Editing enrollment
+- content_for :title do
+  Udzilla
+  \|
+  Editing
+  = @enrollment
 
-= render 'form'
+.card
+  .card-header.coursy.text-center
+    %h2
+      .fas.fa-lock-open
+      Edit Enrollment
+  .card-body 
+    = render 'form'
+  .card-footer
+    .text-center.mt-2
+      = link_to 'Show', @enrollment, class: 'btn btn-primary text-white mr-5'
+      = link_to 'Back', enrollments_path, class: 'btn btn-secondary text-white ml-5'
 
-= link_to 'Show', @enrollment
-\|
-= link_to 'Back', enrollments_path

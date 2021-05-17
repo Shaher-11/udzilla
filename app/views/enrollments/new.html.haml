@@ -1,5 +1,13 @@
-%h1 New enrollment
+- content_for :title do
+  Udzilla
+  \|
+  New   Enrollment
+.card
+  .card-header.text-center.new-cors.coursy
+    %h2
+      .fas.fa-lock-open
+      New Enrollment
+  .card-body.h6
+    = render 'form'
 
-= render 'form'
-
-= link_to 'Back', enrollments_path
+= link_to 'Back', enrollments_path, class: "btn btn-dark text-white"
