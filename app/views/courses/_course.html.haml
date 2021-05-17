@@ -13,7 +13,7 @@
       .fas.fa-signal
       = course.level
   .card-footer.footy
-    = number_to_currency(course.price)
+    = enrollment_button(course)
   .card-footer.footy
     .fas.fa-tasks
     = course.lessons.count

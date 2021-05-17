@@ -5,9 +5,10 @@
 .card
   .card-header.text-center.new-cors.coursy
     %h2
-      .fas.fa-lock-open
-      New Enrollment
-  .card-body.h6
-    = render 'form'
-
-= link_to 'Back', enrollments_path, class: "btn btn-dark text-white"
+      .fas.fa-graduation-cap
+      = link_to @course.title, course_path(@course), class: 'text-warning'
+  .card-body.h6.text-center.new-cors.coursy
+    = form_tag course_enrollments_path(@course) do
+      = submit_tag "Pay only #{@course.price}", class: 'btn btn-success'
+  .card-footer
+    = link_to 'Back', course_path(@course), class: "btn btn-dark text-white"
