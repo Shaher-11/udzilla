@@ -11,11 +11,28 @@
   %table.table-bordered.table-striped.text-center
     %thead
       %tr
-        %th Course
-        %th User
-        %th Rating
-        %th Review
-        %th Price
+        %th ID
+        %th
+          .fas.fa-user
+          User
+        %th
+          .fas.fa-clock
+          Bought
+        %th
+          .fas.fa-graduation-cap
+          Course
+        %th
+          .fas.fa-dollar-sign
+          Price
+        %th
+          .text-warning.far.fa-clock
+          Review
+        %th
+          .text-warning.fas.fa-star
+          Rate
+        %th
+          .text-warning.fas.fa-comment
+          Review
         %th
         %th
         %th
@@ -23,14 +40,18 @@
     %tbody
       - @enrollments.each do |enrollment|
         %tr
-          %td= enrollment.course
-          %td= enrollment.user
+          %td= enrollment.id
+          %td= link_to enrollment.user, user_path(enrollment.user)
+          %td= enrollment.created_at.strftime("%d/%b/%Y  %H:%M")
+          %td= link_to enrollment.course, course_path(enrollment.course)
+          %td= number_to_currency(enrollment.price)
+          %td
+            - if enrollment.rating.present?
+              = enrollment.updated_at.strftime("%d/%b/%Y  %H:%M")
           %td= enrollment.rating
           %td= enrollment.review
-          %td= number_to_currency(enrollment.price)
-          %td= link_to 'Show', enrollment, class: 'btn btn-success text-white'
-          %td= link_to 'Edit', edit_enrollment_path(enrollment), class: 'btn btn-warning text-white'
-          %td= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white'
+          %td= link_to 'Add', edit_enrollment_path(enrollment), class: 'btn btn-warning btn-sm text-white'
+          %td= link_to 'Delete', enrollment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm text-white'
 
   %br
 

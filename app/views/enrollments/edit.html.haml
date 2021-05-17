@@ -7,12 +7,12 @@
 .card
   .card-header.coursy.text-center
     %h2
-      .fas.fa-lock-open
-      Edit Enrollment
+      .text-warning.fas.fa-star
+      Add Review
   .card-body 
     = render 'form'
   .card-footer
     .text-center.mt-2
-      = link_to 'Show', @enrollment, class: 'btn btn-primary text-white mr-5'
-      = link_to 'Back', enrollments_path, class: 'btn btn-secondary text-white ml-5'
+      = link_to 'Show Review', @enrollment, class: 'btn btn-primary text-white mr-5'
+      = link_to 'Back To Course', course_path(@enrollment.course), class: 'btn btn-secondary text-white ml-5'
 
