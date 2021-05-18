@@ -11,7 +11,7 @@
     Courses
 .row.my-3
   .col-12 
-    = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+    = search_form_for @ransack_courses, as: :courses_search, url: @ransack_path do |f|
       
       = f.search_field :title_cont, placeholder: 'Title', class: 'filedy'
       
@@ -23,7 +23,7 @@
     
       = f.search_field :user_email_cont, placeholder: 'Instructor', class: 'filedy'
       = f.submit "search", class: 'btn ml-4 mb-1 btn-success'
-    = link_to courses_path, class: "btn btn-sm btn-primary refrsh" do
+    = link_to @ransack_path, class: "btn btn-sm btn-primary refrsh" do
       Refresh
       .fas.fa-sync
   

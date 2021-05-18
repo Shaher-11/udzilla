@@ -14,17 +14,33 @@
           = link_to courses_path, class: 'nav-link' do
             %i.fas.fa-graduation-cap
             Courses
+        %li{:class => "#{'active font-weight-bold' if current_page?(purchased_courses_path)} nav-item"}
+          = link_to purchased_courses_path, class: 'nav-link' do
+            %i.fab.fa-leanpub
+            My Courses
+        %li{:class => "#{'active font-weight-bold' if current_page?(pending_review_courses_path)} nav-item"}
+          = link_to pending_review_courses_path, class: 'nav-link' do
+            %i.fas.fa-star
+            Pending Reviews
       - if current_user.has_role?(:teacher)
         %ul.navbar-nav.ml-auto.links
-          %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
+          %li{:class => "#{'active font-weight-bold' if current_page?(new_course_path)} nav-item"}
             = link_to new_course_path, class: 'nav-link' do
-              %i.far.fa-plus
-              New Course
+              %i.fas.fa-plus
+              New Course 
+          %li{:class => "#{'active font-weight-bold' if current_page?(created_courses_path)} nav-item"}
+            = link_to created_courses_path, class: 'nav-link' do
+              %i.fab.fa-leanpub
+              My Courses
+          %li{:class => "#{'active font-weight-bold' if current_page?(my_students_enrollments_path)} nav-item"}
+            = link_to my_students_enrollments_path, class: 'nav-link' do
+              %i.fas.fa-users
+              My Students
       - if current_user.has_role?(:admin)
         %ul.navbar-nav.ml-auto.links
           %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
             = link_to users_path, class: 'nav-link' do
-              %i.far.fa-user
+              %i.fas.fa-users
               Users
           %li{:class => "#{'active font-weight-bold' if current_page?(enrollments_path)} nav-item"}
             = link_to enrollments_path, class: 'nav-link' do
