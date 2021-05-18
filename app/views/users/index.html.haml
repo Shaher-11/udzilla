@@ -8,6 +8,11 @@
   Users
   .badge.badge-info
     = @users.count
+.row.mt-4.ml-1
+  .col-12
+    .pagy-center
+      != pagy_bootstrap_nav(@pagy)
+      != pagy_bootstrap_nav_js(@pagy)
 .card-columns
   - @users.each do |user|
     = render 'users/user', user: user
@@ -19,7 +24,6 @@
     = f.submit "search", class: 'btn btn-success ml-3 mb-3 btn-block'
 = link_to users_path, class: "btn btn-sm btn-primary text-white btn-block mb-5" do
   .fas.fa-sync 
-
 %table.table.table-bordered
   %thead
     %tr
@@ -46,3 +50,4 @@
         %td= user.current_sign_in_at
         %td= user.current_sign_in_ip
         %td= user.last_sign_in_ip
+  
