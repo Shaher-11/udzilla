@@ -18,10 +18,14 @@
           = link_to purchased_courses_path, class: 'nav-link' do
             %i.fab.fa-leanpub
             My Courses
+            .badge.badge-warning
+              = current_user.enrollments.count
         %li{:class => "#{'active font-weight-bold' if current_page?(pending_review_courses_path)} nav-item"}
           = link_to pending_review_courses_path, class: 'nav-link' do
             %i.fas.fa-star
             Pending Reviews
+            .badge.badge-warning
+              = current_user.enrollments.pending_review.count
       - if current_user.has_role?(:teacher)
         %ul.navbar-nav.ml-auto.links
           %li{:class => "#{'active font-weight-bold' if current_page?(new_course_path)} nav-item"}
@@ -32,20 +36,28 @@
             = link_to created_courses_path, class: 'nav-link' do
               %i.fab.fa-leanpub
               My Courses
+              .badge.badge-warning
+                = current_user.courses.count
           %li{:class => "#{'active font-weight-bold' if current_page?(my_students_enrollments_path)} nav-item"}
             = link_to my_students_enrollments_path, class: 'nav-link' do
               %i.fas.fa-users
               My Students
+              .badge.badge-warning
+                = Enrollment.joins(:course).where(courses: {user: current_user}).count
       - if current_user.has_role?(:admin)
         %ul.navbar-nav.ml-auto.links
           %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
             = link_to users_path, class: 'nav-link' do
               %i.fas.fa-users
               Users
+              .badge.badge-warning
+                = User.count
           %li{:class => "#{'active font-weight-bold' if current_page?(enrollments_path)} nav-item"}
             = link_to enrollments_path, class: 'nav-link' do
               %i.fas.fa-lock-open
               Enrollments
+              .badge.badge-warning
+                = Enrollment.count
           %li{:class => "#{'active font-weight-bold' if current_page?(activity_path)} nav-item"}
             = link_to activity_path, class: 'nav-link' do
               %i.far.fa-bell
