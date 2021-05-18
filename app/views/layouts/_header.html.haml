@@ -14,22 +14,26 @@
           = link_to courses_path, class: 'nav-link' do
             %i.fas.fa-graduation-cap
             Courses
-        %li{:class => "#{'active font-weight-bold' if current_page?(new_course_path)} nav-item"}
-          = link_to new_course_path, class: 'nav-link' do
-            %i.fas.fa-plus
-            New Course
-        %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
-          = link_to users_path, class: 'nav-link' do
-            %i.far.fa-user
-            Users
-        %li{:class => "#{'active font-weight-bold' if current_page?(enrollments_path)} nav-item"}
-          = link_to enrollments_path, class: 'nav-link' do
-            %i.fas.fa-lock-open
-            Enrollments
-        %li{:class => "#{'active font-weight-bold' if current_page?(activity_path)} nav-item"}
-          = link_to activity_path, class: 'nav-link' do
-            %i.far.fa-bell
-            Activity
+      - if current_user.has_role?(:teacher)
+        %ul.navbar-nav.ml-auto.links
+          %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
+            = link_to new_course_path, class: 'nav-link' do
+              %i.far.fa-plus
+              New Course
+      - if current_user.has_role?(:admin)
+        %ul.navbar-nav.ml-auto.links
+          %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
+            = link_to users_path, class: 'nav-link' do
+              %i.far.fa-user
+              Users
+          %li{:class => "#{'active font-weight-bold' if current_page?(enrollments_path)} nav-item"}
+            = link_to enrollments_path, class: 'nav-link' do
+              %i.fas.fa-lock-open
+              Enrollments
+          %li{:class => "#{'active font-weight-bold' if current_page?(activity_path)} nav-item"}
+            = link_to activity_path, class: 'nav-link' do
+              %i.far.fa-bell
+              Activity
       %ul.navbar-nav.mr-righ
         = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
           .input-group 
