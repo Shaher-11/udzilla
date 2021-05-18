@@ -12,6 +12,17 @@
     .pagy-center
       != pagy_bootstrap_nav(@pagy)
       != pagy_bootstrap_nav_js(@pagy)
+= search_form_for @q do |f|
+  .row
+    = f.search_field :review_cont, placeholder: 'Search Reviews', class: ' m-4 h5 '
+    = f.search_field :rating_eq, placeholder: 'Search Ratings', class: ' m-4 h5 '
+    = f.search_field :price_eq, placeholder: 'Search Prices', class: ' m-4 h5 '
+    = f.search_field :user_email_cont, placeholder: 'Search Users', class: ' m-4 h5 '
+    = f.search_field :course_title_cont, placeholder: 'Search Courses', class: ' m-4 h5 '
+  .row
+    = f.submit "search", class: 'btn btn-success ml-3 mb-3 btn-block'
+= link_to enrollments_path, class: "btn btn-sm btn-primary text-white btn-block mb-5" do
+  .fas.fa-sync 
 .w-100.container.table-responsive
   %table.table-bordered.table-striped.text-center
     %thead
