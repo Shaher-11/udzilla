@@ -21,14 +21,27 @@
       
       = f.search_field :level_cont, placeholder: 'Level', class: 'filedy'
       
+      
       = f.search_field :price_eq, placeholder: 'Price', class: 'filedy'
     
+
       = f.search_field :user_email_cont, placeholder: 'Instructor', class: 'filedy'
+      
       = f.submit "search", class: 'btn ml-4 mb-1 btn-success'
     = link_to @ransack_path, class: "btn btn-sm btn-primary refrsh" do
       Refresh
       .fas.fa-sync
   
+      .row.h3.my-3.text-center
+        .col-3
+          = sort_link(@ransack_courses, :price, "Price")
+        .col-3
+          = sort_link(@ransack_courses, :average_rating, "Top Rated")
+        .col-3
+          = sort_link(@ransack_courses, :enrollments_count, "Most Popular")
+        .col-3
+          = sort_link(@ransack_courses, :created_at, "New")
+
   .row.mt-4.ml-1
     .col-12
       .pagy-center
