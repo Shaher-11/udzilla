@@ -16,8 +16,13 @@
     = enrollment_button(course)
     = review_button(course)
   .card-footer.footy
-    .fas.fa-tasks
-    = course.lessons.count
+    .row
+      .col-6
+        .fas.fa-tasks
+        = course.lessons.count
+      .col-6
+        .text-warning.fas.fa-star
+        = course.average_rating
   .card-footer.footy
     .row
       .col-6
