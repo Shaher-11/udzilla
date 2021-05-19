@@ -30,23 +30,44 @@
 %hr
 %h2
   .parts
+    .fa.fa-user-graduate
+    Keep Learning
+.card-columns
+  - @purchased_courses.each do |course|
+    = render 'courses/course', course: course
+
+%hr
+%h2
+  .parts
+    .fa.fa-chart-line
     Popular Courses
 .card-columns
-  - @courses.each do |course|
+  - @popular_courses.each do |course|
     = render 'courses/course', course: course
 
 %hr
 %h2
   .parts
+    .fa.fa-star
     Top Courses
 .card-columns
-  - @courses.each do |course|
+  - @top_rated_courses.each do |course|
     = render 'courses/course', course: course
 
 %hr
 %h2
   .parts
+    .fa.fa-clock
     Latest Courses
 .card-columns
   - @latest_courses.each do |course|
     = render 'courses/course', course: course
+
+%hr
+%h2
+  .parts
+    .fa.fa-comment
+    Students Testimonials 
+.card-columns
+  - @latest_good_reviews.each do |enrollment|
+    = render 'enrollments/enrollment', enrollment: enrollment
