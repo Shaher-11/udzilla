@@ -35,7 +35,7 @@
           %li{:class => "#{'active font-weight-bold' if current_page?(created_courses_path)} nav-item"}
             = link_to created_courses_path, class: 'nav-link' do
               %i.fab.fa-leanpub
-              My Courses
+              My Teachings
               .badge.badge-warning
                 = current_user.courses.count
           %li{:class => "#{'active font-weight-bold' if current_page?(my_students_enrollments_path)} nav-item"}
