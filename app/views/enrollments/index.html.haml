@@ -1,11 +1,13 @@
 - content_for :title do
   Udzilla
   \|
+  = action_name.humanize
   Enrollments
 %h1
   .text-center.coursy
     .badge.badge-info
       = @enrollments.count
+    = action_name.humanize
     Enrollments
 .row.mt-4.ml-1
   .col-12

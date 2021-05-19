@@ -1,13 +1,15 @@
 - content_for :title do
   Udzilla
   \|
-  All Courses
+  = action_name.humanize
+  Courses
 
 %h1
   .text-center.coursy
     Search 
     .badge.badge-info
       = @courses.count
+    = action_name.humanize
     Courses
 .row.my-3
   .col-12 
