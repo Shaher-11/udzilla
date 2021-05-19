@@ -19,7 +19,7 @@
             %i.fab.fa-leanpub
             My Courses
             .badge.badge-warning
-              = current_user.enrollments.count
+              = current_user.enrollments_count
         %li{:class => "#{'active font-weight-bold' if current_page?(pending_review_courses_path)} nav-item"}
           = link_to pending_review_courses_path, class: 'nav-link' do
             %i.fas.fa-star
@@ -37,7 +37,7 @@
               %i.fab.fa-leanpub
               My Teachings
               .badge.badge-warning
-                = current_user.courses.count
+                = current_user.courses_count
           %li{:class => "#{'active font-weight-bold' if current_page?(my_students_enrollments_path)} nav-item"}
             = link_to my_students_enrollments_path, class: 'nav-link' do
               %i.fas.fa-users

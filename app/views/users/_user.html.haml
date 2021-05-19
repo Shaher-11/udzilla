@@ -8,12 +8,22 @@
       .text-danger.far.fa-circle
     = link_to user.email, user_path(user), class: "text-light"
   .card-footer.footy
-    .far.fa-user
+    .text-primary.far.fa-user
     = user.username
   .card-footer.footy
     .far.fa-clock
     Joined
     = time_ago_in_words(user.created_at)
+  .card-footer.footy
+    .row 
+      .col-6
+        Created Courses:
+        .badge.badge-info
+          = user.courses_count
+      .col-6
+        Enrollments:
+        .badge.badge-info
+          = user.enrollments_count
   .card-footer.footy
     = 'sign_in_count'.humanize
     = user.sign_in_count
