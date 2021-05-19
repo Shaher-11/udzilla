@@ -22,7 +22,7 @@ module CoursesHelper
         if user_course.pending_review.any?
           link_to "Add Review", edit_enrollment_path(user_course.first), class: 'btn btn-primary text-white'
         else
-          link_to "Thanks for the review", enrollment_path(user_course.first), class: 'text-primary'
+          link_to "Reviewed", enrollment_path(user_course.first), class: 'btn btn-primary text-white'
         end
       end
     end

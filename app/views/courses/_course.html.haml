@@ -6,20 +6,26 @@
     %small= simple_format(course.short_description)
   .card-footer.footy
   .row.text-center.h5
-    .col-6
+    .col-4
       .fas.fa-globe-africa
       = course.language
-    .col-6
+    .col-4
+      .fas.fa-tasks
+      = course.lessons.count
+    .col-4
       .fas.fa-signal
       = course.level
   .card-footer.footy
-    = enrollment_button(course)
-    = review_button(course)
+    .row 
+      .col-6
+        = enrollment_button(course)
+      .col-6
+        = review_button(course)
   .card-footer.footy
     .row
       .col-6
-        .fas.fa-tasks
-        = course.lessons.count
+        .fas.fa-users
+        = course.enrollments_count
       .col-6
         .text-warning.fas.fa-star
         = course.average_rating
@@ -33,5 +39,8 @@
         = link_to course.user.username, user_path(course.user)
   -if current_user
     .card-footer.text-center.h5
-      = link_to 'Edit', edit_course_path(course), class: "btn btn btn-warning text-white" if policy(course).edit?
-      = link_to 'Delete', course,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn btn-danger text-white" if policy(course).destroy?
+      .row 
+        .col-6
+          = link_to 'Edit', edit_course_path(course), class: "btn btn btn-warning text-white" if policy(course).edit?
+        .col-6
+          = link_to 'Delete', course,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn btn-danger text-white" if policy(course).destroy?

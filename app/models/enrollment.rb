@@ -1,5 +1,5 @@
 class Enrollment < ApplicationRecord
-  belongs_to :course
+  belongs_to :course, counter_cache: true
   belongs_to :user
 
   validates :user, :course, presence: true
@@ -28,7 +28,7 @@ class Enrollment < ApplicationRecord
   after_destroy do 
     course.update_rating
   end
-  
+
   protected
   def cant_subscribe_to_own_course
     if self.new_record?
