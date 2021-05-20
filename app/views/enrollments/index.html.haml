@@ -51,6 +51,7 @@
         %th
           .text-warning.fas.fa-comment
           Review
+        %th Progress
         %th
         %th
         %th
@@ -68,7 +69,12 @@
               = enrollment.updated_at.strftime("%d/%b/%Y  %H:%M")
           %td= enrollment.rating
           %td= enrollment.review
-          %td= link_to 'Add', edit_enrollment_path(enrollment), class: 'btn btn-warning btn-sm text-white'
-          %td= link_to 'Delete', enrollment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm text-white'
+          %td= number_to_percentage(enrollment.course.progress(enrollment.user), precision: 0)
+          %td
+            - if policy(enrollment).edit?
+              =link_to 'Add', edit_enrollment_path(enrollment), class: 'btn btn-warning btn-sm text-white'
+          %td
+            - if policy(enrollment).destroy?
+              =link_to 'Delete', enrollment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm text-white'
 
   %br

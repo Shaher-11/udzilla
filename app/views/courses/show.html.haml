@@ -3,9 +3,10 @@
   \|
   = @course.title
 
-= link_to 'Courses', courses_path
+= link_to 'Courses', courses_path, class: 'btn btn-warning'
 \|
-= link_to @course.title, courses_path(@course)
+= link_to @course.title, courses_path(@course), class: 'btn btn-warning'
+%p
 %p
 .row
   .col-lg-6

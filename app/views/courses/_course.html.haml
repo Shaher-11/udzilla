@@ -1,4 +1,4 @@
-.card
+.card.sticky-top
   .card-header.headery
     .fas.fa-graduation-cap
     = link_to course.title, course_path(course), class: "titly"
@@ -11,7 +11,7 @@
       = course.language
     .col-4
       .fas.fa-tasks
-      = course.lessons_count
+      = pluralize(course.lessons_count, 'lesson')
     .col-4
       .fas.fa-signal
       = course.level
