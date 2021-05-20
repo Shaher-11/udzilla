@@ -1,8 +1,22 @@
-= link_to 'Courses', courses_path, class: 'btn btn-warning'
-\|
-= link_to @lesson.course.title, course_path(@lesson.course), class: 'btn btn-warning'
-\|
-= link_to @lesson.title, course_lesson_path(@course, @lesson), class: 'btn btn-warning'
+
 %p
-= render 'lessons/lesson', lesson: @lesson
-= link_to 'Back To Course', course_path(@lesson.course), class: 'btn btn-secondary text-white'
+.row 
+  .col-lg-8
+    = render 'lessons/lesson', lesson: @lesson
+    %p
+    %p
+  .col-lg-4
+    %p
+    .row 
+    %p
+      = link_to 'Back To Course', course_path(@lesson.course), class: 'btn btn-warning'
+    %p
+    .row
+      = link_to 'Go To Courses', courses_path, class: 'btn btn-warning ml-3'
+    %p
+    .row
+      = link_to @lesson.course.title, course_path(@lesson.course), class: 'btn btn-warning ml-3'
+    %p
+    .row
+      = link_to @lesson.title, course_lesson_path(@course, @lesson), class: 'btn btn-warning ml-3'
+    %p
