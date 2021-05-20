@@ -4,7 +4,7 @@
   .parts
     Created Users
 .card
-  =area_chart  @users.group_by_day(:created_at).count
+  =line_chart  charts_users_per_day_path
 
 %hr
 %hr
@@ -12,7 +12,7 @@
   .parts
     Total Enrollments
 .card
-  =column_chart  @enrollments.group_by_day(:created_at).count
+  =column_chart  charts_enrollments_per_day_path
 
 %hr
 %hr
@@ -22,3 +22,10 @@
 .card
   =pie_chart  @enrollments.joins(:course).group(:'courses.title').count
 
+%hr
+%hr
+%h2
+  .parts
+    Most Purchased Courses
+.card
+  =bar_chart  @enrollments.joins(:course).group(:'courses.title').sum(:price)

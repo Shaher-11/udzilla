@@ -22,7 +22,6 @@ class StaticPagesController < ApplicationController
 
   def analytics
     if current_user.has_role?(:admin)
-      @users = User.all
       @enrollments = Enrollment.all
       @courses = Course.all
     else
