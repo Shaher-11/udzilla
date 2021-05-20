@@ -79,10 +79,13 @@ class CoursesController < ApplicationController
 
   def destroy
     authorize @course
-    @course.destroy
+    if @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
       format.json { head :no_content }
+    end
+    else
+      redirect_to @course, alert: "Course has enrollments so it can not be destroyed"
     end
   end
 

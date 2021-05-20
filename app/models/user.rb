@@ -14,9 +14,9 @@ class User < ApplicationRecord
     self.email.split(/@/).first
   end
   
-  has_many :courses
-  has_many :enrollments
-  has_many :user_lessons
+  has_many :courses, dependent: :nullify
+  has_many :enrollments, dependent: :nullify
+  has_many :user_lessons, dependent: :nullify
 
   extend FriendlyId
   friendly_id :username, use: :slugged
