@@ -28,6 +28,8 @@ gem 'rolify', '~> 6.0'
 gem 'pundit', '~> 2.1'
 gem 'exception_notification', '~> 4.4', '>= 4.4.3'
 gem 'pagy', '~> 4.7', '>= 4.7.1'
+gem 'chartkick', '~> 4.0', '>= 4.0.4'
+gem 'groupdate'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

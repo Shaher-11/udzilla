@@ -1,0 +1,24 @@
+
+%hr
+%h2
+  .parts
+    Created Users
+.card
+  =area_chart  @users.group_by_day(:created_at).count
+
+%hr
+%hr
+%h2
+  .parts
+    Total Enrollments
+.card
+  =column_chart  @enrollments.group_by_day(:created_at).count
+
+%hr
+%hr
+%h2
+  .parts
+    Course Popularity
+.card
+  =pie_chart  @enrollments.joins(:course).group(:'courses.title').count
+
