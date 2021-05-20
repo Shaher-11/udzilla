@@ -1,6 +1,9 @@
 .card 
   .card-header.headery
-    .far.fa-check-square
+    - if lesson.viewed(current_user) == true
+      .text-success.far.fa-check-square
+    - else
+      .text-danger.far.fa-check-square
     = link_to lesson.title, course_lesson_path(@course, lesson), class: 'text-white'
   - if policy(lesson).show?
     .card-body.desy
