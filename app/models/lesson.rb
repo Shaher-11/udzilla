@@ -18,6 +18,6 @@ class Lesson < ApplicationRecord
   
   def viewed(user)
     self.user_lessons.where(user: user).present?
-
+    
   end
 end

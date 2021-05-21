@@ -7,6 +7,9 @@
     %p
   .col-lg-4
     %p
+    .row
+      /= @lesson.user_lessons.where(user: current_user).first.impression
+    %p
     .row 
     %p
       = link_to 'Back To Course', course_path(@lesson.course), class: 'btn btn-warning'

@@ -13,17 +13,17 @@
         %li{:class => "#{'active font-weight-bold' if current_page?(courses_path)} nav-item"}
           = link_to courses_path, class: 'nav-link' do
             %i.fas.fa-graduation-cap
-            Courses
+            Catalog
         %li{:class => "#{'active font-weight-bold' if current_page?(purchased_courses_path)} nav-item"}
           = link_to purchased_courses_path, class: 'nav-link' do
             %i.fab.fa-leanpub
-            My Courses
+            Courses
             .badge.badge-warning
               = current_user.enrollments_count
         %li{:class => "#{'active font-weight-bold' if current_page?(pending_review_courses_path)} nav-item"}
           = link_to pending_review_courses_path, class: 'nav-link' do
             %i.fas.fa-star
-            Pending Reviews
+            Awaiting
             .badge.badge-warning
               = current_user.enrollments.pending_review.count
       - if current_user.has_role?(:teacher)
@@ -31,17 +31,17 @@
           %li{:class => "#{'active font-weight-bold' if current_page?(new_course_path)} nav-item"}
             = link_to new_course_path, class: 'nav-link' do
               %i.fas.fa-plus
-              New Course 
+              New 
           %li{:class => "#{'active font-weight-bold' if current_page?(created_courses_path)} nav-item"}
             = link_to created_courses_path, class: 'nav-link' do
               %i.fab.fa-leanpub
-              My Teachings
+              Teachings
               .badge.badge-warning
                 = current_user.courses_count
           %li{:class => "#{'active font-weight-bold' if current_page?(my_students_enrollments_path)} nav-item"}
-            = link_to my_students_enrollments_path, class: 'nav-link' do
+            = link_to my_students_enrollments_path, class: 'nav-link mr-3' do
               %i.fas.fa-users
-              My Students
+              Students
               .badge.badge-warning
                 = Enrollment.joins(:course).where(courses: {user: current_user}).count
       - if current_user.has_role?(:admin)

@@ -1,8 +1,8 @@
-.card
-  .card-header 
+.card.text-center
+  .card-header.p-5
     .fa.fa-user
     = link_to enrollment.user.username, user_path(enrollment.user)
-    .fa.fa-clock 
+    .fa.fa-clock
     = time_ago_in_words(enrollment.updated_at)
     .fa.fa-graduation-cap
     = link_to enrollment.course, course_path(enrollment.course)
