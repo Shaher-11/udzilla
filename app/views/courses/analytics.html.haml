@@ -1,0 +1,38 @@
+- content_for :title do
+  Udzilla
+  \|
+  = @course.title
+
+= link_to 'Courses', courses_path, class: 'btn btn-warning text-white'
+
+= link_to @course.title, courses_path(@course), class: 'btn btn-warning text-white'
+
+= link_to analytics_course_path(@course), class: 'btn btn-info text-white' do 
+  .far.fa-chart-bar
+  Analytics
+%hr
+%hr
+%h3.text-center.coursy
+  #{@course.title} Analytics
+%hr
+%hr
+%h1.text-center
+  Number Of Enrollments Per Day
+  = line_chart @course.enrollments.group_by_day(:created_at).count
+%hr
+%hr
+%h3.text-center
+  Revenue Of Enrollments Per Day
+  = bar_chart @course.enrollments.group_by_day(:created_at).sum(:price)
+
+%hr
+%hr
+%h3.text-center
+  Lessons Impressions(number of times lessons was opened)
+  = column_chart @course.user_lessons.joins(:lesson).group(:'lessons.title').sum(:impression)
+
+%hr
+%hr
+%h3.text-center
+  The Unique User Views(number of times a lesson was viewed)
+  = pie_chart @course.user_lessons.joins(:lesson).group(:'lessons.title').count

@@ -41,10 +41,12 @@
     - if policy(course).edit?
       .card-footer.text-center.h5
         .row 
-          .col-6
+          .col-4
             = link_to 'Edit', edit_course_path(course), class: "btn btn btn-warning text-white" if policy(course).edit?
-          .col-6
+          .col-4
             = link_to 'Delete', course,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn btn-danger text-white" if policy(course).destroy?
+          .col-4
+            = link_to 'Analytics', analytics_course_path(course), class: "btn btn btn-info text-white" if policy(course).edit? 
   - if policy(course).destroy?
     -if course.published?
       .card-footer.text-center

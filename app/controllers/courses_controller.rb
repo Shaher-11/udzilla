@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show edit update destroy approve unapprove]
+  before_action :set_course, only: %i[ show edit update destroy approve unapprove analytics]
   skip_before_action :authenticate_user!, :only => [:show]
   # GET /courses or /courses.json
   def index
@@ -49,6 +49,9 @@ class CoursesController < ApplicationController
     redirect_to @course, alert: "Course Unpproved!"
   end
 
+  def analytics
+    authorize @course, :owner?
+  end
   # GET /courses/1 or /courses/1.json
   def show
     authorize @course
