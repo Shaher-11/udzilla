@@ -65,10 +65,6 @@
               .badge.badge-warning
                 = Enrollment.count
           %li{:class => "#{'active font-weight-bold' if current_page?(activity_path)} nav-item"}
-            = link_to activity_path, class: 'nav-link' do
-              %i.far.fa-bell
-              Activity
-          %li{:class => "#{'active font-weight-bold' if current_page?(activity_path)} nav-item"}
             = link_to analytics_path, class: 'nav-link' do
               %i.fas.fa-chart-bar
               Analytics

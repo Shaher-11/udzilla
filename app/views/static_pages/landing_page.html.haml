@@ -28,13 +28,14 @@
     Lifetime Access
 
 %hr
-%h2
-  .parts
-    .fa.fa-user-graduate
-    Keep Learning
-.card-columns
-  - @purchased_courses.each do |course|
-    = render 'courses/course', course: course
+- if current_user
+  %h2
+    .parts
+      .fa.fa-user-graduate
+      Keep Learning
+  .card-columns
+    - @purchased_courses.each do |course|
+      = render 'courses/course', course: course
 
 %hr
 %h2

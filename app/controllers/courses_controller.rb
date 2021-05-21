@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy approve unapprove]
-
+  skip_before_action :authenticate_user!, :only => [:show]
   # GET /courses or /courses.json
   def index
       @ransack_path = courses_path
