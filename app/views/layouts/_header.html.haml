@@ -52,6 +52,12 @@
               Users
               .badge.badge-warning
                 = User.count
+          %li{:class => "#{'active font-weight-bold' if current_page?(users_path)} nav-item"}
+            = link_to unapproved_courses_path, class: 'nav-link' do
+              %i.fas.fa-book
+              Unapproved
+              .badge.badge-warning
+                = Course.unapproved.count
           %li{:class => "#{'active font-weight-bold' if current_page?(enrollments_path)} nav-item"}
             = link_to enrollments_path, class: 'nav-link' do
               %i.fas.fa-lock-open

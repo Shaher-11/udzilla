@@ -48,7 +48,17 @@
   - if policy(course).destroy?
     -if course.published?
       .card-footer.text-center
-        .row
-          .badge.badge-success Published
+        .badge.badge-success Published
     -else
       .badge.badge-danger Unpublished
+    -if course.approved?
+      .card-footer.text-center
+        .badge.badge-success Approved
+    -else
+      .badge.badge-danger Unapproved
+  - if policy(course).approve?
+    .card-footer.text-center
+      -if course.approved?
+        = link_to "Unapprove", unapprove_course_path(course), method: :patch, class: 'btn btn-danger btn-sm text-center'
+      - else
+      = link_to "Approve", approve_course_path(course), method: :patch, class: 'btn btn-primary btn-sm text-center'
