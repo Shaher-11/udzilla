@@ -11,6 +11,7 @@ import "bootstrap"
 import "@fortawesome/fontawesome-free/js/all";
 import "@fortawesome/fontawesome-free/css/all";
 import "chartkick/chart.js"
+import "../trix-editor-overrides"
 
 Rails.start()
 Turbolinks.start()

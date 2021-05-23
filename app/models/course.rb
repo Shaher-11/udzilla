@@ -1,7 +1,8 @@
 class Course < ApplicationRecord
   validates :title, :short_description, :language, :price, :level, presence: true
   validates :description, presence: true, length: {:minimum => 10}
-  validates :title, uniqueness: true
+  validates :title, uniqueness: true, length: {:minimum => 20}
+  validates :price, :numericality => {:greater_than_or_equal_to => 0}
   belongs_to :user, counter_cache: true
   has_many :lessons, dependent: :destroy
   has_many :enrollments, dependent: :restrict_with_error
@@ -23,7 +24,8 @@ class Course < ApplicationRecord
   scope :unapproved, -> { where(approved: false)}
 
   has_one_attached :avatar
-  validates :avatar, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 500.kilobytes , message: 'Size should be less than 500 kilopytes' }
+  validates :avatar, presence: true, 
+  content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 500.kilobytes , message: 'Size should be less than 500 kilopytes' }
 
   LANGUAGES = [:"English", :"Arabic", :"French", :"Spanish"]
   def self.languages
