@@ -13,8 +13,14 @@ class Lesson < ApplicationRecord
   validates :video,
   content_type: ['video/mp4'], size: { less_than: 100.megabytes , message: 'Size should be less than 100 megabytes' }
 
-  validates :video_thumbnail, presence: true, 
+  validates :video_thumbnail,
   content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 500.kilobytes , message: 'Size should be less than 500 kilopytes' }
+
+  #validates :video_thumbnail, presence: true, if: video_present?
+
+  # def video_present?
+  #  self.video.present?
+  #end
 
   extend FriendlyId
   friendly_id :title, use: :slugged
