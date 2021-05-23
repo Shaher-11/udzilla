@@ -1,6 +1,13 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[ show edit update destroy ]
 
+  def sort
+    @course = Course.friendly.find(params[:course_id])
+    lesson = Lesson.friendly.find(params[:lesson_id])
+    authorize lesson, :edit?
+    lesson.update(lesson_params)
+    render body: nil
+  end
   # GET /lessons or /lessons.json
   def index
     @lessons = Lesson.all
@@ -73,6 +80,6 @@ class LessonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lesson_params
-      params.require(:lesson).permit(:title, :content)
+      params.require(:lesson).permit(:title, :content, :row_order_position)
     end
 end

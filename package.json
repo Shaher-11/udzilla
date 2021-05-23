@@ -13,6 +13,7 @@
     "chart.js": "^3.2.1",
     "chartkick": "^4.0.4",
     "jquery": "^3.6.0",
+    "jquery-ui-dist": "^1.12.1",
     "popper.js": "^1.16.1",
     "trix": "^1.2.0",
     "turbolinks": "^5.2.0",

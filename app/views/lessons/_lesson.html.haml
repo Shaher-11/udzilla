@@ -1,14 +1,16 @@
-.card 
-  .card-header.headery
-    - if lesson.viewed(current_user) == true
-      .text-success.far.fa-check-square
-    - else
-      .text-danger.far.fa-check-square
-    = link_to lesson.title, course_lesson_path(@course, lesson), class: 'text-white'
-  - if policy(lesson).show?
-    .card-body.desy
-      = lesson.content
-    .card-footer.footy
-      = link_to 'Edit', edit_course_lesson_path(@course, lesson), class: 'btn btn-warning text-white' if policy(lesson).edit?
-      = link_to 'Destroy', [@course, lesson], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white' if policy(lesson).edit?
+.lesson_sortable
+  = content_tag "div", id: "lesson-#{lesson.id}", data: { model_name: lesson.class.name.underscore, update_url: course_lesson_sort_path(@course, lesson)} do
+    .card
+      .card-header.headery
+        - if lesson.viewed(current_user) == true
+          .text-success.far.fa-check-square
+        - else
+          .text-danger.far.fa-check-square
+        = link_to lesson.title, course_lesson_path(@course, lesson), class: 'text-white'
+      - if policy(lesson).show?
+        .card-body.desy
+          = lesson.content
+        .card-footer.footy
+          = link_to 'Edit', edit_course_lesson_path(@course, lesson), class: 'btn btn-warning text-white' if policy(lesson).edit?
+          = link_to 'Destroy', [@course, lesson], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white' if policy(lesson).edit?
 %p
