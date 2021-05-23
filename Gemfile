@@ -32,6 +32,7 @@ gem 'chartkick', '~> 4.0', '>= 4.0.4'
 gem 'groupdate'
 gem 'ranked-model', '~> 0.4.7'
 gem 'aws-sdk-s3', require: false
+gem 'active_storage_validations', '~> 0.9.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

@@ -2,11 +2,10 @@
   .card-header.headery
     .fas.fa-graduation-cap
     = link_to course.title, course_path(course), class: "titly"
+  - if course.avatar.attached?
+    .card-img-top 
+      = image_tag course.avatar, height: "400px", width: "100%"
   .card-body.desy
-    .row 
-      - if @course.avatar.attached?
-        = image_tag @course.avatar, width: "600px"
-    %p
     %p
     %small= simple_format(course.short_description)
   .card-footer.footy
