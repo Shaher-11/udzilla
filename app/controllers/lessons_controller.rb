@@ -1,5 +1,12 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: %i[ show edit update destroy ]
+  before_action :set_lesson, only: %i[ show edit update destroy delete_video ]
+
+  def delete_video
+    authorize @lesson, :edit?
+    @lesson.video.purge
+    @lesson.video_thumbnail.purge
+    redirect_to course_lesson_path(@course, @lesson), notice: "Succefully Deleted!"
+  end
 
   def sort
     @course = Course.friendly.find(params[:course_id])
@@ -8,29 +15,25 @@ class LessonsController < ApplicationController
     lesson.update(lesson_params)
     render body: nil
   end
-  # GET /lessons or /lessons.json
+
   def index
     @lessons = Lesson.all
   end
 
-  # GET /lessons/1 or /lessons/1.json
   def show
     authorize @lesson
     current_user.view_lesson(@lesson)
   end
 
-  # GET /lessons/new
   def new
     @course = Course.friendly.find(params[:course_id])
     @lesson = Lesson.new
   end
 
-  # GET /lessons/1/edit
   def edit
     authorize @lesson
   end
 
-  # POST /lessons or /lessons.json
   def create
     @course = Course.friendly.find(params[:course_id])
     @lesson = Lesson.new(lesson_params)
@@ -47,7 +50,6 @@ class LessonsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lessons/1 or /lessons/1.json
   def update
     authorize @lesson
     respond_to do |format|
@@ -61,7 +63,6 @@ class LessonsController < ApplicationController
     end
   end
 
-  # DELETE /lessons/1 or /lessons/1.json
   def destroy
     authorize @lesson
     @lesson.destroy
@@ -72,13 +73,12 @@ class LessonsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_lesson
       @course = Course.friendly.find(params[:course_id])
       @lesson = Lesson.friendly.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def lesson_params
       params.require(:lesson).permit(:title, :content, :row_order_position, :video, :video_thumbnail)
     end

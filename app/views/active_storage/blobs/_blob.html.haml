@@ -1,12 +1,16 @@
 %figure{:class => "attachment attachment--#{blob.representable? ? "preview" : "file"} attachment--#{blob.filename.extension}"}
   - if blob.representable?
-    = image_tag blob.representation(resize_to_limit: local_assigns[:in_gallery] ? [ 800, 600 ] : [ 1024, 768 ])
-  %figcaption.attachment__caption
-    - if caption = blob.try(:caption)
-      = caption
+    - if blob.video?
+      %video(controls="true" poster="#{url_for lesson.video_thumbnail}" width="100%" preload="metadata")
+        %source{src: rails_blob_url(blob), type:"#{blob.content_type}"}
     - else
-      %span.attachment__name= blob.filename
-      %span.attachment__size= number_to_human_size blob.byte_size
-      %p
-      = link_to rails_blob_path(blob, disposition: 'preview'), target: :_blank do
-        .text-primary.h2.fas.fa-download
+      = image_tag blob.representation(resize_to_limit: local_assigns[:in_gallery] ? [ 800, 600 ] : [ 1024, 768 ])
+%figcaption.attachment__caption
+  - if caption = blob.try(:caption)
+    = caption
+  - else
+    %span.attachment__name= blob.filename
+    %span.attachment__size= number_to_human_size blob.byte_size
+    %p
+    = link_to rails_blob_path(blob, disposition: 'preview'), target: :_blank do
+      .text-primary.h2.fas.fa-download
