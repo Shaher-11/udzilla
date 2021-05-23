@@ -22,6 +22,7 @@ class Course < ApplicationRecord
   scope :unpublished, -> { where(upublished: false)}
   scope :unapproved, -> { where(approved: false)}
 
+  has_one_attached :avatar
   LANGUAGES = [:"English", :"Arabic", :"French", :"Spanish"]
   def self.languages
     LANGUAGES.map { |language| [language, language]}

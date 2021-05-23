@@ -3,6 +3,11 @@
     .fas.fa-graduation-cap
     = link_to course.title, course_path(course), class: "titly"
   .card-body.desy
+    .row 
+      - if @course.avatar.attached?
+        = image_tag @course.avatar, width: "600px"
+    %p
+    %p
     %small= simple_format(course.short_description)
   .card-footer.footy
   .row.text-center.h5
