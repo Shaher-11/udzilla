@@ -4,11 +4,13 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.input :title
+    = f.input :title, input_html: { autocomplete: 'off' }
     = f.label :content
     = f.rich_text_area :content
     %small= f.error :content, class: 'text-danger'
     = f.input :course_id, input_html: {value: @lesson.course_id || params[:course_id]}, as: :hidden
+    = f.input :video
+    = f.input :video_thumbnail
     %p
   .form-actions
     .btn.btn-success.mybtn
