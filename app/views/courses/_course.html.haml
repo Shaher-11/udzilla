@@ -5,9 +5,13 @@
   - if course.avatar.attached?
     .card-img-top 
       = image_tag course.avatar, height: "400px", width: "100%"
+      /= image_tag course.avatar.variant(resize_to_limit: [100, 100])
   .card-body.desy
     %p
     %small= simple_format(course.short_description)
+  .card-body.desy
+    %p
+    %small= course.description
   .card-footer.footy
   .row.text-center.h5
     .col-4
