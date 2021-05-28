@@ -89,6 +89,9 @@
             = link_to 'Sign Up', new_user_registration_path, class: "nav-link pb-3"
           %li.nav-item
             = link_to 'Sign In', new_user_session_path, class: "nav-link pt-3"
-            = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'nav-link pt-3' do
+            = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-danger btn-lg pt-3' do
               .fab.fa-google 
-              SignIn
+            = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-dark btn-lg pt-3' do
+              .fab.fa-github
+            = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-primary btn-lg pt-3' do
+              .fab.fa-facebook 
