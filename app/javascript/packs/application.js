@@ -47,6 +47,10 @@ $(document).on('turbolinks:load', function(){
       console.log("stop called when finish")
     }
   });
+  
+  $("video").bind("contextmenu",function() {
+    return false;
+  });
 
   let videoPlayer = videojs(document.getElementById('my-video'), {
     controls: true,

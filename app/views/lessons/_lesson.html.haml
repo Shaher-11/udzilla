@@ -14,7 +14,7 @@
               = content_tag :video, id: 'my-video' do
                 = tag :source, src: url_for(lesson.video), type: lesson.video.content_type
             - else
-              %video(controls="true" width="100%" preload="metadata")
+              %video(controls="true" width="100%" preload="metadata" controlslist="nodownload")
                 %source{src: rails_blob_url(lesson.video), type:"#{lesson.video.content_type}"}
           = lesson.content
         .card-footer.footy

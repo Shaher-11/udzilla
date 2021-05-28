@@ -1,4 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+body {
+  background-color: #E4E9F0 !important;
+}
+
 .navbar {
   background-color: #20115b !important;
 }
@@ -140,4 +145,10 @@ footer {
   height: 2.5rem;
   margin-left: 1rem;
   margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .mk {
+    color: black !important;
+  }
 }
