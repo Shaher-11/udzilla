@@ -37,6 +37,7 @@ gem 'image_processing', '~> 1.12', '>= 1.12.1'
 gem 'recaptcha', '~> 5.8'
 gem 'omniauth-google-oauth2', '~> 1.0'
 gem "omniauth-rails_csrf_protection"
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
