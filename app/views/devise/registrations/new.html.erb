@@ -1,4 +1,5 @@
-<h2>Sign up</h2>
+<div class="container app">
+<h2 class="text-center ">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -18,10 +19,11 @@
 
     <%= recaptcha_tags %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+<br>
+  <div class="form-actions text-center">
+    <%= f.button :submit, "Sign up", class: "btn btn-success" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+</div>
