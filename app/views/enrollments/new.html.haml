@@ -23,6 +23,6 @@
                               :src => "https://checkout.stripe.com/checkout.js"}
     - else
       = form_tag course_enrollments_path(@course) do
-        = submit_tag "Free Enrollment", class: 'btn btn-success'
+        = submit_tag "Free Enrollment", class: 'btn btn-success text-white'
   .card-footer
     = link_to 'Back', course_path(@course), class: "btn btn-dark text-white"
