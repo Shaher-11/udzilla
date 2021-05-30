@@ -9,13 +9,13 @@
         = link_to lesson.title, course_lesson_path(@course, lesson), class: 'text-white'
       - if policy(lesson).show?
         .card-body.desy
-          - if lesson.video.attached?
-            - if lesson.video_thumbnail.attached?
+          - if @lesson.video.attached?
+            - if @lesson.video_thumbnail.attached?
               %video(controls="true" poster="#{url_for @lesson.video_thumbnail}" width="100%" preload="metadata" controlslist="nodownload")
-                %source{src: rails_blob_url(lesson.video), type:"#{lesson.video.content_type}"}
+                %source{src: rails_blob_url(@lesson.video), type:"#{@lesson.video.content_type}"}
             - else
               %video(controls="true" width="100%" preload="metadata" controlslist="nodownload")
-                %source{src: rails_blob_url(lesson.video), type:"#{lesson.video.content_type}"}
+                %source{src: rails_blob_url(@lesson.video), type:"#{@lesson.video.content_type}"}
           = lesson.content
         .card-footer.footy
           = link_to 'Edit', edit_course_lesson_path(@course, lesson), class: 'btn btn-warning text-white' if policy(lesson).edit?
