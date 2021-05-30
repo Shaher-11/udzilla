@@ -80,7 +80,7 @@ class User < ApplicationRecord
   end
 
   def calculate_course_income
-    update_column :course_income, (enrollments.map(&:income).sum)
+    update_column :course_income, (courses.map(&:income).sum)
     update_column :balance, (course_income - enrollment_expences)
   end
 
