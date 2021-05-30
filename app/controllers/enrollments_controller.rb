@@ -1,5 +1,6 @@
 class EnrollmentsController < ApplicationController
-  before_action :set_enrollment, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!, :only => [:certificate]
+  before_action :set_enrollment, only: %i[ show edit update destroy certificate]
   before_action :set_course, only: %i[ new create ]
 
   # GET /enrollments or /enrollments.json
@@ -17,8 +18,8 @@ class EnrollmentsController < ApplicationController
     @pagy, @enrollments = pagy(@q.result.includes(:user))
     render 'index'
   end
-  # GET /enrollments/1 or /enrollments/1.json
-  def show
+
+  def certificate
     respond_to do |format|
       format.html
       format.pdf do
@@ -26,12 +27,17 @@ class EnrollmentsController < ApplicationController
         page_size: 'A4',
         template: "enrollments/show.pdf.haml",
         layout: "pdf.html.haml",
-        orientation: "Portrait",
+        orientation: "Landscape",
         lowquality: true,
         zoom: 1,
         dpi: 75
       end
     end
+
+  end
+
+  def show
+    
   end
 
   # GET /enrollments/new

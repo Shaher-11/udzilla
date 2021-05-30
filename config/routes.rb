@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :enrollments do
     get :my_students, on: :collection
+    member do
+      get :certificate
+    end
   end
   devise_for :users, :controllers => { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks'}
   resources :courses do

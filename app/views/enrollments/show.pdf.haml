@@ -1,2 +1,29 @@
-Heloooo
-= @enrollment.course.title
+%center
+  %h1
+    Certificate Of Completion
+
+%p
+%center
+  This is to certify that the owner os this email address
+  %b
+    = @enrollment.user.email
+  has successfully completed the course
+  %b
+    = @enrollment.course.title
+  on the Udzilla.herokuapp platform
+
+%p
+
+%b Certificate ID:
+#{@enrollment.slug}
+
+%p
+
+%b Certificate URL:
+#{request.base_url}#{request.original_fullpath}
+
+%center
+  %h3
+    = image_tag wicked_pdf_asset_base64('udzilla.png'), height: "30", width: "auto"
+    %p
+    www.udzilla.herokuapp.com
