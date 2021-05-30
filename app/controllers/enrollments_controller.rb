@@ -19,6 +19,19 @@ class EnrollmentsController < ApplicationController
   end
   # GET /enrollments/1 or /enrollments/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{@enrollment.course.title}, #{@enrollment.user.email}",
+        page_size: 'A4',
+        template: "enrollments/show.pdf.haml",
+        layout: "pdf.html.haml",
+        orientation: "Portrait",
+        lowquality: true,
+        zoom: 1,
+        dpi: 75
+      end
+    end
   end
 
   # GET /enrollments/new

@@ -39,6 +39,8 @@ gem 'omniauth-google-oauth2', '~> 1.0'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-facebook', '~> 8.0'
+gem 'wicked_pdf', '~> 2.1'
+gem 'wkhtmltopdf-binary'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
