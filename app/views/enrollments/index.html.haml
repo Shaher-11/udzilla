@@ -52,7 +52,7 @@
           .text-warning.fas.fa-comment
           Review
         %th Progress
-        %th
+        %th Certificate
         %th
         %th
 
@@ -70,7 +70,8 @@
           %td= enrollment.rating
           %td= enrollment.review
           %td= number_to_percentage(enrollment.course.progress(enrollment.user), precision: 0)
-          %td
+          %td= link_to 'Cerificate', certificate_enrollment_path(enrollment, format: :pdf)
+          %td 
             - if policy(enrollment).edit?
               =link_to 'Add', edit_enrollment_path(enrollment), class: 'btn btn-warning btn-sm text-white'
           %td
