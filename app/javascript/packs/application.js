@@ -13,8 +13,6 @@ import "@fortawesome/fontawesome-free/css/all";
 import "chartkick/chart.js"
 import "../trix-editor-overrides"
 
-import videojs from "video.js"
-import 'video.js/dist/video-js.css'
 
 Rails.start()
 Turbolinks.start()
@@ -47,13 +45,4 @@ $(document).on('turbolinks:load', function(){
       console.log("stop called when finish")
     }
   });
-  
-  let videoPlayer = videojs(document.getElementById('my-video'), {
-    liveui: true,
-    responsive: true,
-    loop: false,
-    poster: "https://images.unsplash.com/photo-1536060316316-2466bda904f1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  })
-  videoPlayer.addClass('video-js')
-  videoPlayer.addClass('vjs-big-play-centered')
 });
