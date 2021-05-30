@@ -2,7 +2,7 @@ class Lesson < ApplicationRecord
   belongs_to :course, counter_cache: true
   has_many :user_lessons, dependent: :destroy
   validates :title, :content, :course,  presence: true
-  validates :title, length: {:minimum => 20}
+  validates :title, length: {:minimum => 10}
   validates_uniqueness_of :title, scope: :course_id
 
   has_rich_text :content

@@ -48,9 +48,18 @@ $(document).on('turbolinks:load', function(){
     }
   });
   
-  $("video").bind("contextmenu",function() {
-    return false;
-  });
+  let videoPlayer = videojs(document.getElementById('my-video'), {
+    controls: true,
+    playbackRates: [0.5, 1, 1.5],
+    autoplay: false,
+    fluid: true,
+    preload: false,
+    autoplay: false,
+    liveui: true,
+    responsive: true,
+    loop: false,
+    poster: "https://images.unsplash.com/photo-1536060316316-2466bda904f1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  })
   videoPlayer.addClass('video-js')
   videoPlayer.addClass('vjs-big-play-centered')
 });
