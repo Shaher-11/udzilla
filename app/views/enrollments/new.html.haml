@@ -13,16 +13,7 @@
       = number_to_currency @course.price
 
   .card-body.h6.text-center.new-cors.coursy
-    - if @course.price > 0
-      = form_tag course_enrollments_path(@course) do
-        %script.stripe-button{"data-amount" => "#{(@course.price * 100).to_i}",
-                              "data-description" => "#{@course.title} (#{number_to_currency @course.price})",
-                              "data-email" => "#{current_user.email}",
-                              "data-key" => "pk_test_51IKlNdInIoaWfwt3zWraQDi3O2HZ2KjbfWWdT0KZRRuGfgeInNzqd0lRe9nxVIchYoZSgVA31Y4NvDZGhVjzDqJi00Ddmy4FtV",
-                              "data-locale" => "auto",
-                              :src => "https://checkout.stripe.com/checkout.js"}
-    - else
-      = form_tag course_enrollments_path(@course) do
-        = submit_tag "Free Enrollment", class: 'btn btn-success'
+    = form_tag course_enrollments_path(@course) do
+      = submit_tag "Free Enrollment", class: 'btn btn-success'
   .card-footer
     = link_to 'Back', course_path(@course), class: "btn btn-dark text-white"
