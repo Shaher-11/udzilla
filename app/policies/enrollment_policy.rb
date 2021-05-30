@@ -20,4 +20,8 @@ class EnrollmentPolicy < ApplicationPolicy
   def destroy?
     @user.has_role?:admin 
   end
+
+  def certificate?
+    @record.course.lessons_count == @record.course.user_lessons.where(user: @record.user).count
+  end
 end
