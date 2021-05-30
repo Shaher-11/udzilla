@@ -1,7 +1,7 @@
 class Course < ApplicationRecord
   validates :title, :short_description, :language, :price, :level, presence: true
   validates :description, presence: true, length: {:minimum => 10}
-  validates :title, uniqueness: true, length: {:minimum => 20}
+  validates :title, uniqueness: true, length: {:minimum => 10}
   validates :price, :numericality => {:greater_than_or_equal_to => 0}
   belongs_to :user, counter_cache: true
   has_many :lessons, dependent: :destroy
@@ -47,7 +47,7 @@ end
 
   def calculate_income
     update_column :income, (enrollments.map(&:price).sum)
-    user.calculate_course_income
+    user.calculate_balance
   end 
 
   def update_rating
