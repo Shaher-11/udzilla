@@ -77,7 +77,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: "Course was successfully created." }
+        format.html { redirect_to @course, notice: "Course was successfully created, PLease wait for admin's approval" }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new, status: :unprocessable_entity }

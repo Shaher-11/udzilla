@@ -32,7 +32,7 @@
       .col-4
         - if current_user
           - if course.enrollments.where(user: current_user).any?
-            = link_to certificate_enrollment_path(current_user.enrollments.where(course: @course).first, format: :pdf),class: 'btn btn-success text-white' do
+            = link_to certificate_enrollment_url(course.enrollments.where(user: current_user).first, format: :pdf),class: 'btn btn-success text-white' do
               .fas.fa-gift
               Certificate 
   .card-footer.footy
