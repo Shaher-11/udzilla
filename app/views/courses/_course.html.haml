@@ -25,10 +25,16 @@
       = course.level
   .card-footer.footy
     .row 
-      .col-6
+      .col-4
         = enrollment_button(course)
-      .col-6
+      .col-4
         = review_button(course)
+      .col-4
+        - if current_user
+          - if course.enrollments.where(user: current_user).any?
+            = link_to certificate_enrollment_path(current_user.enrollments.where(course: @course).first, format: :pdf),class: 'btn btn-success text-white' do
+              .fas.fa-gift
+              Certificate 
   .card-footer.footy
     .row
       .col-6
