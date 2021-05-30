@@ -16,6 +16,17 @@
     = time_ago_in_words(user.created_at)
   .card-footer.footy
     .row 
+      .col-4
+        Teaching Income
+        = user.course_income
+      .col-4
+        Learning spending
+        = user.enrollment_expences
+      .col-4
+        Total balance
+        = user.balance
+  .card-footer.footy
+    .row 
       .col-6
         Created Courses:
         .badge.badge-info
