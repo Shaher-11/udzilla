@@ -63,7 +63,7 @@ class EnrollmentsController < ApplicationController
     end 
 
       @enrollment =  current_user.buy_course(@course)
-      redirect_to course_path(@course), notice: "Congratulations You have enrolled successfully!"
+      redirect_to root_path, notice: "Congratulations You have enrolled successfully!"
 
       rescue Stripe::CardError => e
         flash[:error] = e.message
