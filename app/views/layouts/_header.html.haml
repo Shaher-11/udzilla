@@ -83,15 +83,15 @@
             = link_to destroy_user_session_path, method: :delete,  class: "dropdown-item topy" do
               .fas.fa-sign-out-alt.btn-c
     - else
-      %ul.navbar-nav
-        .outer-link
-          %li.nav-item
-            = link_to 'Sign Up', new_user_registration_path, class: "nav-link pb-3"
-          %li.nav-item
-            = link_to 'Sign In', new_user_session_path, class: "nav-link pt-3"
-            = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-danger btn-lg pt-3' do
-              .fab.fa-google 
-            = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-dark btn-lg pt-3' do
-              .fab.fa-github
-            = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-primary btn-lg pt-3' do
-              .fab.fa-facebook 
+      .cont
+        %ul.navbar-nav
+          = link_to 'Sign Up', new_user_registration_path, class: "nav-link pb-3 h5"
+          = link_to 'Sign In', new_user_session_path, class: "nav-link pb-3 h5"
+          %br/
+          %br/
+          = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-danger btn-lg pt-3 pr-3 mr-3 mb-3' do
+            .fab.fa-google
+          = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-dark btn-lg pt-3 pr-3 mr-3 mb-3' do
+            .fab.fa-github
+          = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn btn-primary btn-lg pt-3 pr-3 mr-3 mb-3' do
+            .fab.fa-facebook 
