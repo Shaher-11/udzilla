@@ -49,12 +49,6 @@ $(document).on('turbolinks:load', function(){
   });
   
   let videoPlayer = videojs(document.getElementById('my-video'), {
-    controls: true,
-    playbackRates: [0.5, 1, 1.5],
-    autoplay: false,
-    fluid: true,
-    preload: false,
-    autoplay: false,
     liveui: true,
     responsive: true,
     loop: false,
