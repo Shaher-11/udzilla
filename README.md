@@ -22,7 +22,7 @@
 
 # Udzilla Domain Model
 
-![screenshot](../udzilla/app/assets/images/erd-1.png)
+![screenshot](./app/assets/images/erd-1.png)
 
 
 ## Live Demo
