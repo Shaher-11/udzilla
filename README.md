@@ -14,6 +14,7 @@
 
 - Ruby
 - Ruby On Rails
+- Javascript
 - Bootstrap
 - HAML
 - AWS S3
