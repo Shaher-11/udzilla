@@ -4,16 +4,17 @@
   New   Enrollment
 .card
   .card-header.text-center.new-cors.coursy
-    %h2
+    %h4
       .fas.fa-graduation-cap
       = link_to @course.title, course_path(@course), class: 'text-warning'
       %hr/
       .fas.fa-lock-open 
       Buy Course For Only:
       = number_to_currency @course.price
-
+  %br/
   .card-body.h6.text-center.new-cors.coursy
     - if @course.price > 0
+      %br/
       = form_tag course_enrollments_path(@course) do
         %script.stripe-button{"data-amount" => "#{(@course.price * 100).to_i}",
                               "data-description" => "#{@course.title} (#{number_to_currency @course.price})",
@@ -22,6 +23,7 @@
                               "data-locale" => "auto",
                               :src => "https://checkout.stripe.com/checkout.js"}
     - else
+      %br/
       = form_tag course_enrollments_path(@course) do
         = submit_tag "Free Enrollment", class: 'btn btn-success text-white'
   .card-footer

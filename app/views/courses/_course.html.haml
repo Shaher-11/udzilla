@@ -1,7 +1,8 @@
 .card.sticky-top
-  .card-header.headery
+  .card-header.headery.h4
     .fas.fa-graduation-cap
     = link_to course.title, course_path(course), class: "titly"
+    %br/
   - if course.avatar.attached?
     .card-img-top 
       = image_tag course.avatar, height: "400px", width: "100%"

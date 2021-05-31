@@ -35,10 +35,11 @@ gem 'aws-sdk-s3', require: false
 gem 'active_storage_validations', '~> 0.9.3'
 gem 'image_processing', '~> 1.12', '>= 1.12.1'
 gem 'recaptcha', '~> 5.8'
-gem 'omniauth-google-oauth2', '~> 1.0'
+gem 'omniauth-google-oauth2'
+#gem 'omniauth-oauth2', '~> 1.3.1'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
-gem 'omniauth-facebook', '~> 8.0'
+gem 'omniauth-facebook'
 gem 'wicked_pdf', '~> 2.1'
 gem 'wkhtmltopdf-heroku', group: :production
 gem 'wkhtmltopdf-binary', group: :development

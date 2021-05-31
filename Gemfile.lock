@@ -378,9 +378,9 @@ DEPENDENCIES
   image_processing (~> 1.12, >= 1.12.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  omniauth-facebook (~> 8.0)
+  omniauth-facebook
   omniauth-github!
-  omniauth-google-oauth2 (~> 1.0)
+  omniauth-google-oauth2
   omniauth-rails_csrf_protection
   pagy (~> 4.7, >= 4.7.1)
   pg (~> 1.1)
