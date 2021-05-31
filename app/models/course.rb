@@ -25,7 +25,7 @@ class Course < ApplicationRecord
 
   has_one_attached :avatar
   validates :avatar, presence: true, 
-  content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 500.kilobytes , message: 'Size should be less than 500 kilopytes' }
+  content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 900.kilobytes , message: 'Size should be less than 900 kilopytes' }
 
   LANGUAGES = [:"English", :"Arabic", :"French", :"Spanish"]
   def self.languages

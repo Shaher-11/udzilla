@@ -11,7 +11,7 @@ class Lesson < ApplicationRecord
   has_one_attached :video_thumbnail
 
   validates :video,
-  content_type: ['video/mp4'], size: { less_than: 100.megabytes , message: 'Size should be less than 100 megabytes' }
+  content_type: ['video/mp4'], size: { less_than: 200.megabytes , message: 'Size should be less than 200 megabytes' }
 
   validates :video_thumbnail,
   content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 500.kilobytes , message: 'Size should be less than 500 kilopytes' }

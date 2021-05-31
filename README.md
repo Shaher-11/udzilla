@@ -1,24 +1,54 @@
-# README
+![](https://img.shields.io/badge/Udzilla-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Udzilla
 
-Things you may want to cover:
+> Udzilla is an E-learning platform with many features implemented to help students and teachers have the best experience of online learning,
+> The project built to be a place for affordable learning material as it has free and paid courses,Also students will get certificates whether the course is paid or not,the platform has too many features and functionalities to include in a paragraph so Please visit the link below and see for yourself,
+> As for the domain model of the project, I have included an ERD down below, Kindly check it out.
 
-* Ruby version
 
-* System dependencies
+![screenshot](./app/assets/images/app.png)
 
-* Configuration
 
-* Database creation
+## Built With
 
-* Database initialization
+- Ruby
+- Ruby On Rails
+- Bootstrap
+- HAML
+- AWS S3
+- PostrgreSQL
+- Lots of love :heart:
 
-* How to run the test suite
+# Udzilla Domain Model
 
-* Services (job queues, cache servers, search engines, etc.)
+![screenshot](../udzilla/app/assets/images/erd-1.png)
 
-* Deployment instructions
 
-* ...
+## Live Demo
+
+[Udzilla Live Demo](https://udzilla.herokuapp.com)
+
+
+
+👤 **Shaher Shamroukh**
+ 
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/Shaher-11)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/ShaherShamroukh/)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/shaher-shamroukh/)
+ <a href="mailto:shahershamroukh@gmail.com?subject=Hey Shaher!"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
+ 
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](../LICENSE) licensed.
