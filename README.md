@@ -43,7 +43,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/Shaher-11/udzilla/issues).
 
 ## Show your support
 
