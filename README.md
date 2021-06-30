@@ -18,6 +18,7 @@
 - Bootstrap
 - HAML
 - AWS S3
+- Twilio
 - PostrgreSQL
 - Lots of love :heart:
 
