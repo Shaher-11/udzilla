@@ -6,9 +6,12 @@
 > The project built to be a place for affordable learning material as it has free and paid courses,Also students will get certificates whether the course is paid or not,the platform has too many features and functionalities to include in a paragraph so Please visit the link below and see for yourself,
 > As for the domain model of the project, I have included an ERD down below, Kindly check it out.
 
-
+## Students and teachers UI
 ![screenshot](./app/assets/images/app.png)
 
+
+## Admin UI
+![screenshot](./app/assets/images/analytics.png)
 
 ## Built With
 
