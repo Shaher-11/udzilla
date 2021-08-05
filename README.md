@@ -36,6 +36,12 @@
 
 ### To test the stripe payment you can use this stripe card number (4242 4242 4242 4242) and add any number in the CVC field such as 123 as well as a valid date.
 
+
+## Deployment
+
+:warning: This project is authorial, and therefore should not be deployed without the creator's permission :warning:
+
+
 👤 **Shaher Shamroukh**
  
 [<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/Shaher-11)
