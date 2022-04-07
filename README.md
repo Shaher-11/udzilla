@@ -37,7 +37,7 @@
 
 [Udzilla Live Demo](https://udzilla.herokuapp.com)
 
-### To test the stripe payment you can use this stripe card number (4242 4242 4242 4242) and add any number in the CVC field such as 123 as well as a valid date.
+### To test the stripe payment you can use this stripe card number which is meant for testing (4242 4242 4242 4242) and add any number in the CVC field such as 123 as well as a valid date.
 
 
 ## Deployment
