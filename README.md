@@ -7,7 +7,6 @@
 > As for the domain model of the project, I have included an ERD down below, Kindly check it out.
 
 
-
 ## Students and teachers UI
 ![screenshot](./app/assets/images/app.png)
 
